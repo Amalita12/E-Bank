@@ -38,9 +38,13 @@ public class Bank {
     }
 
     public void displayAccounts() {
-        System.out.println("--- Liste des comptes de la banque ---");
-        for (Account a : accounts) {
-            System.out.println("Compte n°: " + a.getNumCompte() + " | Solde: " + a.getSolde() + " €");
+        if (accounts.isEmpty()) {
+            System.out.println("Aucun compte trouvé");
+        } else {
+            System.out.println("--- Liste des comptes de la banque ---");
+            for (Account a : accounts) {
+                System.out.println("Compte n°: " + a.getNumCompte() + " | Solde: " + a.getSolde() + " DH");
+            }
         }
     }
 
