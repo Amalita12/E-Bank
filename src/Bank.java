@@ -5,20 +5,31 @@ public class Bank {
     private List<Account> accounts;
     private List<Client> clients;
 
-    public Bank(){
-        this.accounts= new ArrayList<>();
-        this.clients= new ArrayList<>();
+    public Bank() {
+        this.accounts = new ArrayList<>();
+        this.clients = new ArrayList<>();
     }
-    public void ajouterClient(Client client){
+
+    public void ajouterClient(Client client) {
         clients.add(client);
     }
 
-    public void creerCompte(String num, double solde){
-        Account nvCompte = new Account(num,solde); // création
-        accounts.add(nvCompte);
+    public void creerCompte(String num, double solde) {
+
+        if (trouverCompte(num) != null) {
+            System.out.println("Compte  existant!");
+            return;
+        }
+        else{
+            Account nvAccount = new Account(num,solde);
+            accounts.add(nvAccount);
+            System.out.println("Account added successfully");
+        }
+
 
 
     }
+
 
     public void creerCompteEpargne ( Client c, String numCompte, double solde, double tauxInteret){
         SavingsAccount nvCompte = new SavingsAccount(numCompte,solde,tauxInteret);
@@ -33,11 +44,17 @@ public class Bank {
         }
     }
 
-    public void supprimerClient (String num){
+    public void supprimerCompte (String num){
         Account a = trouverCompte(num);
         if (a!=null){
-            accounts.remove(a);
-            System.out.println("Votre compte est supprimé avec succès.");
+                if(a.getSolde()>0){
+                    System.out.println("Veuillez retirer le solde restant avant de supprimer le compte.");
+                }else{
+                    accounts.remove(a);
+                    System.out.println("Votre compte est supprimé avec succès.");
+
+            }
+
         }else{
             System.out.println("Erreur! Compte introuvable.");
         }

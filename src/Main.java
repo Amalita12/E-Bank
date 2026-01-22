@@ -37,7 +37,6 @@ public class Main {
                     System.out.println("Solde initial: ");
                     double solde= scanner.nextDouble();
                     mabq.creerCompte(numCompte,solde);
-                    System.out.println("compte ajouté à la banque.");
                     break;
                 case 3:
                     mabq.displayAccounts();
@@ -55,10 +54,12 @@ public class Main {
                     if (accDepot != null) {
                         System.out.print("Montant à déposer : ");
                         double montant = scanner.nextDouble();
-                        accDepot.deposerArgent(montant);
-                        System.out.println("Dépôt effectué.");
-                    } else {
-                        System.out.println("Compte introuvable.");
+                        if(montant>0) {
+                            accDepot.deposerArgent(montant);
+                            System.out.println("Dépôt effectué.");
+                        }else {
+                            System.out.println("Vous devez déposer un montant positif!");
+                        }
                     }
                     break;
 
@@ -79,8 +80,11 @@ public class Main {
                 case 7:
                     System.out.println("Numéro de compte à supprimer : ");
                     String ndelete = scanner.next();
-                        mabq.supprimerClient(ndelete);
+
+                        mabq.supprimerCompte(ndelete);
                         break;
+
+
                 case 8:
                     System.out.println("Merci d'avoir utilisé E-bank. Au rvoir!");
                     break;

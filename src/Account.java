@@ -27,7 +27,9 @@ public class Account {
     }
 
     public void deposerArgent(double amount){
+
          solde+=amount;
+
     }
 
     public void retirerArgent(double amount){
