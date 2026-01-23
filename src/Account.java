@@ -5,10 +5,10 @@ public class Account {
     private double solde;
 
     public Account(String numCompte, double solde) {
-        this.numCompte= numCompte;
-        this.solde=solde;
-    }
+        this.numCompte = numCompte;
+        this.solde = solde;
 
+    }
 
     public double getSolde() {
         return solde;

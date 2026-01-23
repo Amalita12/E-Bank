@@ -32,10 +32,13 @@ public class Main {
                     System.out.println("Client ajouté avec succès.");
                     break;
                 case 2:
+
                     System.out.println("numéro de compte: ");
                     String numCompte= scanner.next();
+
                     System.out.println("Solde initial: ");
                     double solde= scanner.nextDouble();
+
                     mabq.creerCompte(numCompte,solde);
                     break;
                 case 3:
