@@ -38,8 +38,12 @@ public class Main {
 
                     System.out.println("Solde initial: ");
                     double solde= scanner.nextDouble();
+                    if (solde>0){
+                        mabq.creerCompte(numCompte,solde);
+                    }else {
+                        System.out.println("Vous devez entrer un solde positif !");
+                    }
 
-                    mabq.creerCompte(numCompte,solde);
                     break;
                 case 3:
                     mabq.displayAccounts();
