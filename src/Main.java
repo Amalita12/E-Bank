@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice = 0; // Toujours initialiser à une valeur neutre
+        int choice = 0;
         Bank mabq = new Bank();
 
         do {
@@ -54,7 +54,6 @@ public class Main {
                         mabq.consulterSolde(numRecherche);
                         break;
                     case 5:
-                        // Nettoyage du tampon avant nextLine
                         scanner.nextLine();
                         System.out.print("Numéro de compte : ");
                         String nDepot = scanner.nextLine();
@@ -77,7 +76,7 @@ public class Main {
                         System.out.print("Numéro de compte : ");
                         String nRetirer = scanner.nextLine();
                         Account accRetirer = mabq.trouverCompte(nRetirer);
-                        if (accRetirer != null) { // Correction ici : vérifier l'objet accRetirer, pas le String
+                        if (accRetirer != null) {
                             System.out.print("Montant à retirer: ");
                             double mnt = scanner.nextDouble();
                             accRetirer.retirerArgent(mnt);
