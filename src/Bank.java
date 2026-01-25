@@ -51,11 +51,11 @@ public class Bank {
     public void supprimerCompte (String num){
         Account a = trouverCompte(num);
         if (a!=null){
-                if(a.getSolde()>0){
-                    System.out.println("Veuillez retirer le solde restant avant de supprimer le compte.");
-                }else{
-                    accounts.remove(a);
-                    System.out.println("Votre compte est supprimé avec succès.");
+            if(a.getSolde()>0){
+                System.out.println("Veuillez retirer le solde restant avant de supprimer le compte.");
+            }else{
+                accounts.remove(a);
+                System.out.println("Votre compte est supprimé avec succès.");
 
             }
 
@@ -86,14 +86,10 @@ public class Bank {
     public void consulterSolde(String num){
         Account a = trouverCompte(num);
         if(a!=null){
-            System.out.println("Le solde du compte: "+num+"="+a.getSolde()+"DH");
+            System.out.println("Le solde du compte: "+num+" = "+a.getSolde()+" DH");
 
         }else {
             System.out.println("Erreur! Compte introuvable.");
         }
     }
 }
-
-
-
-

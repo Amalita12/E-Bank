@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class Account {
     private String numCompte;
     private double solde;
@@ -28,13 +26,13 @@ public class Account {
 
     public void deposerArgent(double amount){
 
-         solde+=amount;
+        solde+=amount;
 
     }
 
     public void retirerArgent(double amount){
         if (amount<=solde){
-             solde-=amount;
+            solde-=amount;
             System.out.println("Retrait réussi");
 
         }else{
